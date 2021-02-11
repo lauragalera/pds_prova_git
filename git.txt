@@ -1,0 +1,130 @@
+git init
+
+> A.txt
+
+git add A.txt
+
+git commit -m "fitxer inicial"
+
+> B.txt
+
+git add B.txt
+
+git commit -m "fitxer inicial"
+
+echo "Canvi A1" >> A.txt
+
+echo "Canvi B1" >> B.txt
+
+git add A.txt
+
+git commit -m "canvi A1"
+
+git add B.txt
+
+git commit -m "canvi B1"
+
+git checkout -b branca1
+
+> C.txt
+
+git add C.txt
+
+git commit -m "fitxer inicial"
+
+echo "canvi C1 branca 1" >> C.txt
+
+git add C.txt
+
+git commit -m "canvi C1"
+
+git checkout master
+
+git checkout -b branca2
+
+> D.txt
+
+git add D.txt
+
+git commit -m "fitxer inicial"
+
+echo "canvi D1 branca 2" >> D.txt
+
+git add D.txt
+
+git commit -m "canvi D1"
+
+git checkout branca1
+
+git merge branca2 --no-edit
+
+git checkout master
+
+git merge branca1 --no-edit
+
+> E.txt
+
+git add E.txt
+
+git commit -m "fitxer inicial"
+
+git checkout -b branca3
+
+echo "canvia E1 branca3" >> E.txt
+
+git add E.txt
+
+git commit -m "canvi E1"
+
+git checkout master
+
+git checkout -b branca4
+
+echo "canvia E1 branca 4" >> E.txt
+
+git add E.txt
+
+git commit -m "canvi E1"
+
+git checkout master
+
+git merge branca3 --no-edit
+
+git merge -s ours branca4 --no-edit
+
+echo "Canvi A2" >> A.txt
+
+git add A.txt
+
+git commit -m "canvia A2"
+
+git revert HEAD --no-edit
+
+echo "Canvi A3" >> A.txt
+
+git add A.txt
+
+git commit -m "canvia A3"
+
+echo "Canvi B2" >> B.txt
+
+git add B.txt
+
+git commit -m "canvia B2"
+
+echo "Canvi C1" >> C.txt
+
+git add C.txt
+
+git commit -m "canvia C1"
+
+git checkout HEAD^1
+
+git revert HEAD --no-edit
+
+git checkout -b brancaNeta
+
+git checkout master
+
+git merge brancaNeta --no-edit
+
